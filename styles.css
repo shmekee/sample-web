@@ -1,0 +1,23 @@
+.title {
+    color: #FF5733;
+}
+p {
+    /*color: red;*/
+}
+
+
+/* box styles below */
+
+div {
+    background-color: gray;
+    padding: 10px;
+    padding-right: 50px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 5px 10px 20px 30px
+}
+
+h1 {
+    color: red;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        
+        <script>
+        // Set the URL of the outside link
+        const outsideLink = 'https://steelfabak.com';
+
+        // Fetch the HTML content of the outside link
+        fetch(outsideLink)
+          .then(response => response.text())
+          .then(html => {
+            // Create a virtual DOM element to parse the HTML content
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Get the Open Graph meta tags from the parsed HTML
+            const ogTitle = doc.querySelector('meta[property="og:title"]').getAttribute('content');
+            const ogImage = doc.querySelector('meta[property="og:image"]').getAttribute('content');
+
+            // Display the Open Graph title and image
+            document.querySelector('h1').textContent = ogTitle;
+            document.querySelector('img').setAttribute('src', ogImage);
+          })
+          .catch(error => console.error(error));
+        </script>
+        
+        
+    </head>
+    <body>
+    
+        <p>Test appears below</p>
+        
+        <h1></h1>
+        
+        <img src="" alt="image test"/>
+    
+    
+    </body>
+</html>
